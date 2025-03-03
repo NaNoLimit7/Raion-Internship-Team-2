@@ -41,7 +41,7 @@ fun UserOption(navController: NavController) {
                 verticalArrangement = Arrangement.Center
             ) {
                 Button(
-                    onClick = {navController.navigate("LoginScreenUser")},
+                    onClick = {navController.navigate("LoginScreenApplicants")},
                     modifier = Modifier
                         .height(108.dp)
                         .width(300.dp)
@@ -60,8 +60,6 @@ fun UserOption(navController: NavController) {
 
             }
         }
-
-
     }
 }
 

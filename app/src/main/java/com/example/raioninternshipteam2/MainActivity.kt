@@ -11,8 +11,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.raioninternshipteam2.presentation.home.HomeScreenApplicants
+import com.example.raioninternshipteam2.presentation.home.HomeScreenApplicants
+import com.example.raioninternshipteam2.presentation.home.HomeScreenCafe
+import com.example.raioninternshipteam2.presentation.registration.LoginScreenApplicants
 import com.example.raioninternshipteam2.presentation.registration.LoginScreenCafe
-import com.example.raioninternshipteam2.presentation.registration.LoginScreenUser
+import com.example.raioninternshipteam2.presentation.registration.LoginScreenApplicants
+import com.example.raioninternshipteam2.presentation.registration.SignupScreenApplicants
+import com.example.raioninternshipteam2.presentation.registration.SignupScreenCafe
 import com.example.raioninternshipteam2.presentation.registration.UserOption
 import com.example.raioninternshipteam2.ui.theme.RaionInternshipTeam2Theme
 
@@ -27,12 +33,25 @@ class MainActivity : ComponentActivity() {
                 composable("UserOption"){
                     UserOption(navController)
                 }
-                composable("LoginScreenUser"){
-                    LoginScreenUser(navController)
+                composable("LoginScreenApplicants"){
+                    LoginScreenApplicants(navController)
                 }
                 composable("LoginScreenCafe"){
                     LoginScreenCafe(navController)
                 }
+                composable("HomeScreenCafe"){
+                    HomeScreenCafe(navController)
+                }
+                composable("HomeScreenApplicants"){
+                    HomeScreenApplicants(navController)
+                }
+                composable("SignupScreenApplicants"){
+                    SignupScreenApplicants(navController)
+                }
+                composable("SignupScreenCafe"){
+                    SignupScreenCafe(navController)
+                }
+
             })
 
 

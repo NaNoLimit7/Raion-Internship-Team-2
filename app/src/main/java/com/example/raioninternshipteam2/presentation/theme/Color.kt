@@ -1,4 +1,4 @@
-package com.example.raioninternshipteam2.ui.theme
+package com.example.raioninternshipteam2.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 

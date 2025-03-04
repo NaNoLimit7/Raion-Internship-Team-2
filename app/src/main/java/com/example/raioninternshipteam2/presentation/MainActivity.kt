@@ -20,7 +20,7 @@ import com.example.raioninternshipteam2.presentation.registration.LoginScreenApp
 import com.example.raioninternshipteam2.presentation.registration.SignupScreenApplicants
 import com.example.raioninternshipteam2.presentation.registration.SignupScreenCafe
 import com.example.raioninternshipteam2.presentation.registration.UserOption
-import com.example.raioninternshipteam2.ui.theme.RaionInternshipTeam2Theme
+import com.example.raioninternshipteam2.presentation.theme.RaionInternshipTeam2Theme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,21 +56,5 @@ class MainActivity : ComponentActivity() {
 
 
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    RaionInternshipTeam2Theme {
-        Greeting("Android")
     }
 }

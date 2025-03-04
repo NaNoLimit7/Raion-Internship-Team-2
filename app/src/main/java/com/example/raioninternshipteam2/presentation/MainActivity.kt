@@ -8,6 +8,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -21,15 +22,17 @@ import com.example.raioninternshipteam2.presentation.registration.SignupScreenAp
 import com.example.raioninternshipteam2.presentation.registration.SignupScreenCafe
 import com.example.raioninternshipteam2.presentation.registration.UserOption
 import com.example.raioninternshipteam2.presentation.theme.RaionInternshipTeam2Theme
+import com.google.firebase.FirebaseApp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        FirebaseApp.initializeApp(this)
         setContent {
-            val navController = rememberNavController()
+            val navController: NavHostController = rememberNavController()
 
-            NavHost(navController, startDestination = "UserOption", builder = {
+            NavHost(navController = navController, startDestination = "UserOption", builder = {
                 composable("UserOption"){
                     UserOption(navController)
                 }

@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
@@ -28,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.raioninternshipteam2.reusable.RegisterTextField
 
 @Composable
 fun LoginScreenCafe(navController: NavController) {
@@ -37,24 +39,20 @@ fun LoginScreenCafe(navController: NavController) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         var password by remember { mutableStateOf("") }
-
+        var email by remember { mutableStateOf("") }
 
         Text("Cafe Login Page",
             fontSize = 32.sp)
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        OutlinedTextField(password,
-            onValueChange = { password = it },
-            label = { Text("Password ") })
+        RegisterTextField(email, onValueChange = {email = it}, "Email", icons = Icons.Filled.AccountCircle)
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        OutlinedTextField(password,
-            onValueChange = { password = it },
-            label = { Text("Password ") })
+        RegisterTextField(password, onValueChange = {password = it}, "Password", icons = Icons.Filled.Lock)
 
-        Button(onClick = {navController.navigate("HomeScreenCafe")}) {
+        Button(onClick = {navController.navigate("RegisterScreenCafe")}) {
             Text("Login")
         }
 

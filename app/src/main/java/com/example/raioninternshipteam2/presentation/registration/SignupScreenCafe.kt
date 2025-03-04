@@ -5,6 +5,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.Button
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -19,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.raioninternshipteam2.reusable.RegisterTextField
 
 @Composable
 fun SignupScreenCafe(navController: NavController) {
@@ -29,24 +33,24 @@ fun SignupScreenCafe(navController: NavController) {
     ) {
         var password by remember { mutableStateOf("") }
         var email by remember { mutableStateOf("") }
-
+        var confirmpassword by remember { mutableStateOf("") }
 
         Text(
-            "Cafe Singup Page",
+            "Cafe Signup Page",
             fontSize = 32.sp
         )
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        OutlinedTextField(email,
-            onValueChange = { email = it },
-            label = { Text("Email ") })
+        RegisterTextField(email, onValueChange = {email = it}, "Email", icons = Icons.Filled.AccountCircle)
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        OutlinedTextField(password,
-            onValueChange = { password = it },
-            label = { Text("Password ") })
+        RegisterTextField(password, onValueChange = {password = it}, "Password", icons = Icons.Filled.Lock)
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        RegisterTextField(confirmpassword, onValueChange = {confirmpassword = it}, "Confirm Password", icons = Icons.Filled.Lock)
 
         Button(onClick = { navController.navigate("LoginScreenCafe") }) {
             Text("SignUp")

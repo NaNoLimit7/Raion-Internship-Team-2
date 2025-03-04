@@ -5,12 +5,16 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.Button
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -19,9 +23,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.raioninternshipteam2.reusable.RegisterTextField
 
 @Composable
-fun SignupScreenApplicants(navController: NavController) {
+fun SignupScreenApplicants(navController: NavController,authViewModel: AuthViewModel) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -29,29 +34,39 @@ fun SignupScreenApplicants(navController: NavController) {
     ) {
         var password by remember { mutableStateOf("") }
         var email by remember { mutableStateOf("") }
+        var confirmpassword by remember { mutableStateOf("") }
+        val authState = authViewModel.authState.observeAsState()
 
         Text(
-            "Applicants Signup Page",
-            fontSize = 32.sp
+            "Applicants Signup Page", fontSize = 32.sp
         )
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        OutlinedTextField(email,
-            onValueChange = { email = it },
-            label = { Text("Password ") })
+        RegisterTextField(
+            email, onValueChange = { email = it }, "Email", icons = Icons.Filled.AccountCircle
+        )
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        OutlinedTextField(password,
-            onValueChange = { password = it },
-            label = { Text("Password ") })
+        RegisterTextField(
+            password, onValueChange = { password = it }, "Password", icons = Icons.Filled.Lock
+        )
 
-        Button(onClick = { navController.navigate("LoginScreenApplicants") }) {
+        Spacer(modifier = Modifier.height(16.dp))
+
+        RegisterTextField(
+            confirmpassword,
+            onValueChange = { confirmpassword = it },
+            "Confirm Password",
+            icons = Icons.Filled.Lock
+        )
+
+        Button(onClick = { authViewModel.signup(email, password) }) {
             Text("SignUp")
         }
 
-        TextButton(onClick = {}) {
+        TextButton(onClick = {navController.navigate("LoginScreenApplicants")}) {
             Text("Already have an account? Login Here.")
         }
 

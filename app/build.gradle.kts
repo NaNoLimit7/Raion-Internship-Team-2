@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.gms.google.services)
+    //id("com.google.gms.google-services") version "4.4.2"
 }
 
 android {
@@ -73,4 +74,10 @@ dependencies {
     val nav_version = "2.8.8"
 
     implementation("androidx.navigation:navigation-compose:$nav_version")
+
+    //Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:33.10.0"))
+
+    //Firebase auth
+    implementation("com.google.firebase:firebase-auth")
 }

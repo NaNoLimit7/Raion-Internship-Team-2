@@ -14,7 +14,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.raioninternshipteam2.presentation.registration.LoginScreenCafe
 import com.example.raioninternshipteam2.presentation.registration.LoginScreenUser
 import com.example.raioninternshipteam2.presentation.registration.UserOption
-import com.example.raioninternshipteam2.ui.theme.RaionInternshipTeam2Theme
+import com.example.raioninternshipteam2.presentation.theme.RaionInternshipTeam2Theme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,21 +37,5 @@ class MainActivity : ComponentActivity() {
 
 
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    RaionInternshipTeam2Theme {
-        Greeting("Android")
     }
 }

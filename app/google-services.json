@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "855102654035",
-    "project_id": "rakhman-b13eb",
-    "storage_bucket": "rakhman-b13eb.firebasestorage.app"
+    "project_number": "8815980617",
+    "project_id": "raion-internship-team-2",
+    "storage_bucket": "raion-internship-team-2.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:855102654035:android:838ef49400a39b2d0528a6",
+        "mobilesdk_app_id": "1:8815980617:android:79ff69824259decd270f98",
         "android_client_info": {
-          "package_name": "com.example.wiap1"
+          "package_name": "com.example.raioninternshipteam2"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBfnEmBhcFAEe5U9zpokXplKWuXBY4d4a4"
+          "current_key": "AIzaSyDa9KgFPSbrDiOOqhvBtdoB7sF5RjiErdE"
         }
       ],
       "services": {
